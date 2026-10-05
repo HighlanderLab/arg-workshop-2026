@@ -1,0 +1,388 @@
+/* ------------------------------
+   Base
+------------------------------ */
+
+:root {
+    --navy: #102a43;
+    --blue: #1f5f8b;
+    --blue-light: #eaf3f8;
+    --teal: #2a9d8f;
+    --cream: #f7f8f5;
+    --white: #ffffff;
+    --text: #243b53;
+    --muted: #627d98;
+    --border: #d9e2ec;
+
+    --max-width: 1100px;
+    --narrow-width: 760px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+}
+
+
+/* ------------------------------
+   Typography
+------------------------------ */
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    line-height: 1.2;
+    color: var(--navy);
+}
+
+h1 {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    letter-spacing: -0.04em;
+    max-width: 900px;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.025em;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.35rem;
+}
+
+p {
+    margin-top: 0;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ------------------------------
+   Layout
+------------------------------ */
+
+.container {
+    width: min(
+        calc(100% - 3rem),
+        var(--max-width)
+    );
+
+    margin: 0 auto;
+}
+
+.narrow {
+    max-width: var(--narrow-width);
+}
+
+.section {
+    padding: 6rem 0;
+}
+
+.section-alt {
+    background: var(--cream);
+}
+
+
+/* ------------------------------
+   Hero
+------------------------------ */
+
+.hero {
+    padding: 7rem 0 6rem;
+
+    color: var(--white);
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(42, 157, 143, 0.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #102a43 0%,
+            #164e70 100%
+        );
+}
+
+.hero h1 {
+    color: var(--white);
+}
+
+.eyebrow,
+.section-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.eyebrow {
+    color: #9edbd3;
+}
+
+.intro {
+    max-width: 700px;
+
+    font-size: 1.25rem;
+    color: #d9edf0;
+}
+
+.hero-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+
+    margin: 3rem 0;
+}
+
+.hero-details div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-details strong {
+    color: var(--white);
+}
+
+.hero-details span {
+    color: #b8d0dc;
+    font-size: 0.95rem;
+}
+
+
+/* ------------------------------
+   Buttons
+------------------------------ */
+
+.button {
+    display: inline-block;
+
+    padding: 0.85rem 1.5rem;
+
+    color: var(--navy);
+    background: var(--white);
+
+    border-radius: 6px;
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ------------------------------
+   Sections
+------------------------------ */
+
+.section-label {
+    margin-bottom: 1rem;
+    color: var(--teal);
+}
+
+.section p {
+    font-size: 1.05rem;
+    color: var(--text);
+}
+
+
+/* ------------------------------
+   Programme
+------------------------------ */
+
+.schedule {
+    margin-top: 3rem;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 2rem;
+
+    padding: 1.8rem 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.schedule-item:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.schedule-item time {
+    padding-top: 0.15rem;
+
+    font-weight: 700;
+    color: var(--blue);
+
+    white-space: nowrap;
+}
+
+.schedule-item p {
+    margin-bottom: 0;
+
+    color: var(--muted);
+    font-size: 0.98rem;
+}
+
+.session-type {
+    display: inline-block;
+
+    margin-bottom: 0.5rem;
+
+    color: var(--blue);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.session-type.workbook {
+    color: var(--teal);
+}
+
+.session-type.coffee,
+.break-label {
+    color: #b7791f;
+}
+
+.break h3,
+.lunch h3 {
+    margin-bottom: 0;
+}
+
+
+/* ------------------------------
+   Two-column sections
+------------------------------ */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 5rem;
+}
+
+
+/* ------------------------------
+   Registration
+------------------------------ */
+
+.register {
+    background: var(--blue-light);
+}
+
+.center {
+    text-align: center;
+}
+
+.register .button {
+    color: var(--white);
+    background: var(--blue);
+}
+
+.small {
+    margin-top: 1.5rem;
+
+    color: var(--muted) !important;
+    font-size: 0.9rem !important;
+}
+
+
+/* ------------------------------
+   Footer
+------------------------------ */
+
+footer {
+    padding: 3rem 0;
+
+    color: #b8c9d4;
+    background: var(--navy);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.footer-content div {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content strong {
+    color: var(--white);
+}
+
+.footer-content span {
+    font-size: 0.9rem;
+}
+
+
+/* ------------------------------
+   Mobile
+------------------------------ */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding: 5rem 0 4rem;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+
+    .hero-details {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+}
